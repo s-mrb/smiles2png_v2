@@ -1,0 +1,64 @@
+You take two inputs:
+
+                    raw_obabel      : directory where raw babel svg placed
+                    parsed_obabel   : directory where to store parsed and structured obabel svg
+                    r_png           : where to store returned png
+
+
+
+raw_obabel                  |---a.txt
+        |---------------A---|---b.txt
+        |                   |---x.txt
+        |
+        |
+        |---------------B----(same as A)
+
+
+
+
+Short : make one folder  which must contain r_obabe, p_obabel, r_png folders.......
+
+
+Extra:
+        get name of all folders in raw_obabel
+        then iteratively enter each folder
+            with in that folder , parse all .txt files and store in parsed_obabel, with the same folder name and file
+            name
+
+
+
+        keep record of all files parsed in log directory
+        so that in case of failure of any file parsing it is not in log file and we can delete its output folder or file
+        cause it will be corrupt
+
+
+
+
+
+CAVEATS :
+
+1-if the file you want to check existence if has a folder with same name(extension in folder name)
+then file check fails!
+
+2-Insert content at specific point in text file without needing to copy huge amount of data first
+ and then writing it back
+
+
+
+
+ NOTES :
+
+
+  Directory must be like
+    root/p_obabel
+    root/r_obabel
+    root/r_png
+
+
+ feed_png_maker takes root directory
+ feed_parser takes root directory
+
+ parser parses one file, feed parser make a pipeline and parses every file in every destination folder automatically
+ png_maker convert one entire text file into images, whereas feed_png_maker make a pipeline and make images out of all
+ files in all desired folders
+
